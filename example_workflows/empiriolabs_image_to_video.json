@@ -1,0 +1,364 @@
+{
+  "id": "e7c1a227-7a58-4756-a06e-9ce1cc3627df",
+  "revision": 0,
+  "last_node_id": 5,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Note",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        460,
+        300
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "EmpirioLabs AI: image to video\n\nGenerate Image creates the first frame. Its url output links to the image, and Generate Video animates it. To make a video from text only, disconnect image_url. Video generation usually takes 1 to 15 minutes. Each image and video uses credits from your EmpirioLabs AI account.\n\nAdd your API key before you run this workflow: set the EMPIRIOLABS_API_KEY environment variable and restart ComfyUI, or copy config.example.ini to config.ini in the EmpirioLabs AI node folder and paste your key there. Do not type the key into a node, because workflows and saved images keep node values.\n\nCreate a key at https://platform.empiriolabs.ai/dashboard/api-keys\nModels and prices: https://empiriolabs.ai/models"
+      ],
+      "widgets_values_named": {
+        "text": "EmpirioLabs AI: image to video\n\nGenerate Image creates the first frame. Its url output links to the image, and Generate Video animates it. To make a video from text only, disconnect image_url. Video generation usually takes 1 to 15 minutes. Each image and video uses credits from your EmpirioLabs AI account.\n\nAdd your API key before you run this workflow: set the EMPIRIOLABS_API_KEY environment variable and restart ComfyUI, or copy config.example.ini to config.ini in the EmpirioLabs AI node folder and paste your key there. Do not type the key into a node, because workflows and saved images keep node values.\n\nCreate a key at https://platform.empiriolabs.ai/dashboard/api-keys\nModels and prices: https://empiriolabs.ai/models"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 2,
+      "type": "EmpirioLabsGenerateImage",
+      "pos": [
+        0,
+        340
+      ],
+      "size": [
+        460,
+        420
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            1
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "url",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmpirioLabsGenerateImage",
+        "cnr_id": "empiriolabs",
+        "ver": "1.0.0"
+      },
+      "widgets_values": [
+        "flux-2-klein-4b",
+        "A red lighthouse on a rocky coast at dusk, waves breaking below, dramatic sky, photographic",
+        "16:9",
+        "default",
+        1,
+        1,
+        "randomize",
+        ""
+      ],
+      "widgets_values_named": {
+        "model": "flux-2-klein-4b",
+        "prompt": "A red lighthouse on a rocky coast at dusk, waves breaking below, dramatic sky, photographic",
+        "aspect_ratio": "16:9",
+        "resolution": "default",
+        "num_images": 1,
+        "seed": 1,
+        "control_after_generate": "randomize",
+        "extra_parameters": ""
+      }
+    },
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": [
+        0,
+        800
+      ],
+      "size": [
+        460,
+        300
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 4,
+      "type": "EmpirioLabsGenerateVideo",
+      "pos": [
+        500,
+        340
+      ],
+      "size": [
+        460,
+        440
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "image_url",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "image_url"
+          },
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "video",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "VIDEO",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            3
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "url",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmpirioLabsGenerateVideo",
+        "cnr_id": "empiriolabs",
+        "ver": "1.0.0"
+      },
+      "widgets_values": [
+        "hunyuan-video-1-5",
+        "Slow cinematic push toward the lighthouse as waves break against the rocks and the beam begins to turn",
+        5,
+        "480p",
+        "default",
+        1,
+        "randomize",
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "model": "hunyuan-video-1-5",
+        "prompt": "Slow cinematic push toward the lighthouse as waves break against the rocks and the beam begins to turn",
+        "duration": 5,
+        "resolution": "480p",
+        "aspect_ratio": "default",
+        "seed": 1,
+        "control_after_generate": "randomize",
+        "image_url": "",
+        "extra_parameters": ""
+      }
+    },
+    {
+      "id": 5,
+      "type": "SaveVideo",
+      "pos": [
+        1000,
+        340
+      ],
+      "size": [
+        560,
+        420
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "video",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "VIDEO",
+          "pos": null,
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "video",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "VIDEO",
+          "pos": null,
+          "slot_index": null,
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "EmpirioLabs/video",
+        "auto",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "EmpirioLabs/video",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      2,
+      1,
+      4,
+      0,
+      "STRING"
+    ],
+    [
+      3,
+      4,
+      0,
+      5,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "floatingLinks": null,
+  "groups": [],
+  "definitions": null,
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8,
+      "offset": [
+        130,
+        120
+      ]
+    },
+    "reroutes": null,
+    "frontendVersion": "1.55.18"
+  },
+  "version": 0.4
+}

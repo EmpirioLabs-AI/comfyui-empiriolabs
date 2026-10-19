@@ -1,0 +1,29 @@
+[project]
+name = "empiriolabs"
+version = "1.0.0"
+description = "EmpirioLabs AI nodes for ComfyUI: generate images and videos, chat with text and vision models, and turn text into speech with models from the EmpirioLabs AI catalog."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+# Everything the nodes import ships with ComfyUI: aiohttp, Pillow, NumPy, PyTorch and PyAV.
+dependencies = []
+classifiers = [
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository = "https://github.com/EmpirioLabs-AI/comfyui-empiriolabs"
+Homepage = "https://empiriolabs.ai"
+Documentation = "https://docs.empiriolabs.ai"
+"Bug Tracker" = "https://github.com/EmpirioLabs-AI/comfyui-empiriolabs/issues"
+
+[tool.comfy]
+PublisherId = "empiriolabs"
+DisplayName = "EmpirioLabs AI"
+Icon = "https://raw.githubusercontent.com/EmpirioLabs-AI/comfyui-empiriolabs/main/assets/icon.png"
+requires-comfyui = ">=0.3.48"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# The pack's own __init__.py expects to be loaded by ComfyUI, so tests import modules by path.
+addopts = "--import-mode=importlib"

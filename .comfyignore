@@ -1,0 +1,10 @@
+# Kept in git but left out of the Comfy Registry archive.
+# Files git does not track (such as config.ini) are never published.
+tests/
+scripts/
+.github/
+assets/
+config.ini
+smoke_output/
+__pycache__/
+*.pyc

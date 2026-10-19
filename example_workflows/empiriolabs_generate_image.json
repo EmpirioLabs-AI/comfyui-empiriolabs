@@ -1,0 +1,193 @@
+{
+  "id": "e56c7475-0b75-41e6-85e7-4b7c6c94f694",
+  "revision": 0,
+  "last_node_id": 3,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Note",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        460,
+        260
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "EmpirioLabs AI: generate an image\n\nChoose an image model, write a prompt and run the workflow. Each image uses credits from your EmpirioLabs AI account.\n\nAdd your API key before you run this workflow: set the EMPIRIOLABS_API_KEY environment variable and restart ComfyUI, or copy config.example.ini to config.ini in the EmpirioLabs AI node folder and paste your key there. Do not type the key into a node, because workflows and saved images keep node values.\n\nCreate a key at https://platform.empiriolabs.ai/dashboard/api-keys\nModels and prices: https://empiriolabs.ai/models"
+      ],
+      "widgets_values_named": {
+        "text": "EmpirioLabs AI: generate an image\n\nChoose an image model, write a prompt and run the workflow. Each image uses credits from your EmpirioLabs AI account.\n\nAdd your API key before you run this workflow: set the EMPIRIOLABS_API_KEY environment variable and restart ComfyUI, or copy config.example.ini to config.ini in the EmpirioLabs AI node folder and paste your key there. Do not type the key into a node, because workflows and saved images keep node values.\n\nCreate a key at https://platform.empiriolabs.ai/dashboard/api-keys\nModels and prices: https://empiriolabs.ai/models"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 2,
+      "type": "EmpirioLabsGenerateImage",
+      "pos": [
+        0,
+        300
+      ],
+      "size": [
+        460,
+        420
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            1
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "url",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmpirioLabsGenerateImage",
+        "cnr_id": "empiriolabs",
+        "ver": "1.0.0"
+      },
+      "widgets_values": [
+        "flux-2-klein-4b",
+        "A glass greenhouse on a sea cliff at sunrise, soft golden light, morning mist over calm water, detailed, photographic",
+        "16:9",
+        "default",
+        1,
+        1,
+        "randomize",
+        ""
+      ],
+      "widgets_values_named": {
+        "model": "flux-2-klein-4b",
+        "prompt": "A glass greenhouse on a sea cliff at sunrise, soft golden light, morning mist over calm water, detailed, photographic",
+        "aspect_ratio": "16:9",
+        "resolution": "default",
+        "num_images": 1,
+        "seed": 1,
+        "control_after_generate": "randomize",
+        "extra_parameters": ""
+      }
+    },
+    {
+      "id": 3,
+      "type": "SaveImage",
+      "pos": [
+        500,
+        300
+      ],
+      "size": [
+        640,
+        420
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "EmpirioLabs/image"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "EmpirioLabs/image"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "floatingLinks": null,
+  "groups": [],
+  "definitions": null,
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8,
+      "offset": [
+        130,
+        120
+      ]
+    },
+    "reroutes": null,
+    "frontendVersion": "1.55.18"
+  },
+  "version": 0.4
+}

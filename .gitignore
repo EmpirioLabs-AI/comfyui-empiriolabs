@@ -1,0 +1,13 @@
+# Your API key file. Never commit it.
+config.ini
+
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Files the live smoke script writes
+smoke_output/
