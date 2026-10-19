@@ -292,7 +292,7 @@ class GenerateImage(io.ComfyNode):
                 io.String.Output(
                     display_name="url",
                     tooltip=(
-                        "Link to the first image, valid for 7 days. Connect it to image_url on "
+                        "Link to the first image. It expires, so save the image to keep it. Connect it to image_url on "
                         "EmpirioLabs AI Generate Video to animate the image."
                     ),
                 ),
@@ -414,7 +414,7 @@ class GenerateVideo(io.ComfyNode):
             ],
             outputs=[
                 io.Video.Output(display_name="video"),
-                io.String.Output(display_name="url", tooltip="Link to the video file, valid for 7 days."),
+                io.String.Output(display_name="url", tooltip="Link to the video file. It expires, so save the video to keep it."),
             ],
             hidden=[io.Hidden.unique_id],
         )

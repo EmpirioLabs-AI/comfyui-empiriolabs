@@ -387,3 +387,23 @@ def test_send_does_not_follow_redirects(local_server):
 
     status, headers = run(scenario())
     assert status == 302 and headers["location"] == "https://elsewhere.example.com/steal"
+
+
+@pytest.mark.parametrize(
+    "url, allowed",
+    [
+        ("https://media.empiriolabs.ai/files/a.webp?token=t&expires=1", True),
+        ("https://8.8.8.8/file.png", True),
+        ("http://media.empiriolabs.ai/files/a.webp", False),
+        ("https://localhost/file.png", False),
+        ("https://foo.localhost/file.png", False),
+        ("https://127.0.0.1/file.png", False),
+        ("https://10.0.0.5/file.png", False),
+        ("https://169.254.169.254/latest/meta-data", False),
+        ("https://192.168.1.10/file.png", False),
+        ("https://[::1]/file.png", False),
+        ("not a url", False),
+    ],
+)
+def test_downloads_only_from_public_https_links(url, allowed):
+    assert client.is_https_url(url) is allowed

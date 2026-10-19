@@ -1,6 +1,6 @@
 [project]
 name = "empiriolabs"
-version = "1.0.0"
+version = "1.0.1"
 description = "EmpirioLabs AI nodes for ComfyUI: generate images and videos, chat with text and vision models, and turn text into speech with models from the EmpirioLabs AI catalog."
 readme = "README.md"
 license = { file = "LICENSE" }

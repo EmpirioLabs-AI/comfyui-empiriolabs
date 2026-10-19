@@ -64,7 +64,7 @@ The pack adds two example workflows to ComfyUI's **Templates** panel, listed und
 - **Credits.** Requests use the credits on your EmpirioLabs AI account. Prices are listed on the [pricing page](https://empiriolabs.ai/pricing). Each run with a new seed is a new request; set the seed's control after generate to `fixed` to reuse the last result while the inputs stay the same.
 - **Waiting.** The node shows its status and the elapsed time. Video generation usually takes 1 to 15 minutes.
 - **Cancelling.** Cancelling the run in ComfyUI stops the node and cancels the job it is waiting for. A generation that has already started may still be billed.
-- **Generated file links expire 7 days after they are created.** Save the files you want to keep with ComfyUI's Save nodes.
+- **Generated file links expire.** Save the files you want to keep with ComfyUI's Save nodes.
 - **Model lists.** The lists refresh in the background every few hours; reload the page to see new models. If the catalog cannot be reached when ComfyUI starts, each node lists one model until the catalog loads. A workflow saved with a model that is not in the current list still runs.
 - **Errors.** The node shows the message returned by the API, such as an unsupported parameter for the selected model, with a request ID to quote to support.
 

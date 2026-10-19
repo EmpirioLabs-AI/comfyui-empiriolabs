@@ -18,6 +18,7 @@ import asyncio
 import base64
 import binascii
 import contextlib
+import ipaddress
 import json
 import logging
 import time
@@ -149,11 +150,19 @@ class _UnsafeLink(Exception):
 
 
 def is_https_url(url: str) -> bool:
+    """A public https link: never a local or private address."""
     try:
         parts = urlsplit(url)
     except ValueError:
         return False
-    return parts.scheme == "https" and bool(parts.hostname)
+    host = (parts.hostname or "").lower()
+    if parts.scheme != "https" or not host or host == "localhost" or host.endswith(".localhost"):
+        return False
+    try:
+        address = ipaddress.ip_address(host)
+    except ValueError:
+        return True
+    return address.is_global
 
 
 async def _fetch(
@@ -509,8 +518,8 @@ async def download(url: str, *, kind: str, timeout: float) -> tuple[bytes, str]:
                 await sleep(2 ** (attempt - 1))
                 continue
             raise ApiError(
-                f"The generated {kind} could not be downloaded (HTTP {exc.status}). The link stays valid "
-                f"for 7 days, so you can also open it directly: {url}"
+                f"The generated {kind} could not be downloaded (HTTP {exc.status}). "
+                f"You can also open the link directly before it expires: {url}"
             ) from None
         except (aiohttp.ClientError, asyncio.TimeoutError):
             if attempt < DOWNLOAD_ATTEMPTS:
@@ -518,7 +527,7 @@ async def download(url: str, *, kind: str, timeout: float) -> tuple[bytes, str]:
                 continue
             raise ApiError(
                 f"The generated {kind} could not be downloaded. Check the internet connection and try again. "
-                f"The link stays valid for 7 days: {url}"
+                f"You can also open the link directly before it expires: {url}"
             ) from None
         except _DownloadTooLarge:
             raise ApiError(
