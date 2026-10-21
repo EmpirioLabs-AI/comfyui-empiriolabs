@@ -1,0 +1,4 @@
+# The CLI that publishes this node to the Comfy Registry (.github/workflows/publish.yml).
+# Pin an exact release older than 7 days, then regenerate publish.txt from the repository root:
+#   uv pip compile --generate-hashes --exclude-newer "7 days" --python-version 3.12 --python-platform linux .github/requirements/publish.in -o .github/requirements/publish.txt
+comfy-cli==1.22.0
