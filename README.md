@@ -86,7 +86,7 @@ COMFYUI_PATH=/path/to/ComfyUI python -m pytest
 COMFYUI_PATH=/path/to/ComfyUI EMPIRIOLABS_API_KEY=sk-empiriolabs-... python scripts/live_smoke.py --spend --image --chat --speech
 ```
 
-Versions are published to the Comfy Registry by the [publish workflow](.github/workflows/publish.yml) when the version in `pyproject.toml` changes on `main`. It needs a Comfy Registry publishing key in the `REGISTRY_ACCESS_TOKEN` repository secret.
+Versions are published to the Comfy Registry by the [publish workflow](.github/workflows/publish.yml) when the version in `pyproject.toml` changes on `main`. It needs a Comfy Registry publishing key in the `REGISTRY_ACCESS_TOKEN` secret of the `comfy-registry` environment, and each run waits for a maintainer's approval.
 
 ## Links
 

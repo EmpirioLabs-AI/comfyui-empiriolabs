@@ -2,8 +2,9 @@ name: Publish to Comfy Registry
 
 # Publishes this node when pyproject.toml changes on main, or by hand.
 # comfy-cli comes from .github/requirements/publish.txt: an exact release older
-# than 7 days, with every dependency pinned by hash. The registry key reaches
-# only the publish step, through its environment.
+# than 7 days, with every dependency pinned by hash. The registry key is a secret
+# of the comfy-registry environment, which runs only from main and waits for the
+# owner's approval; it reaches only the publish step.
 
 on:
   workflow_dispatch:
@@ -21,6 +22,7 @@ jobs:
     name: Publish custom node to the registry
     runs-on: ubuntu-latest
     if: ${{ github.repository_owner == 'EmpirioLabs-AI' }}
+    environment: comfy-registry
     steps:
       - name: Check out code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -42,6 +44,6 @@ jobs:
 
       - name: Publish custom node
         env:
-          # A Comfy Registry publishing key, stored as a repository secret.
+          # A Comfy Registry publishing key, a secret of the comfy-registry environment.
           REGISTRY_ACCESS_TOKEN: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
         run: comfy node publish --token "$REGISTRY_ACCESS_TOKEN"

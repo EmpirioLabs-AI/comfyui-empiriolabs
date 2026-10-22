@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # Version updates wait until a release is a week old: a poisoned release is
+  # usually found and pulled within hours. Security updates are not delayed.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+  # The hash-locked comfy-cli that publishes the node (publish.in -> publish.txt).
+  - package-ecosystem: pip
+    directory: /.github/requirements
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7

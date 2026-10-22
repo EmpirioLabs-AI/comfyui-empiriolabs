@@ -2,3 +2,12 @@
 # Pin an exact release older than 7 days, then regenerate publish.txt from the repository root:
 #   uv pip compile --generate-hashes --exclude-newer "7 days" --python-version 3.12 --python-platform linux .github/requirements/publish.in -o .github/requirements/publish.txt
 comfy-cli==1.22.0
+
+# Security floors for two of its dependencies. Both drop the emSign ECC Root CA - G3,
+# whose intermediate CA keys were compromised: uv 0.13.4 (GHSA-hq85-5cpj-mr62) and
+# certifi 2026.10.19 (GHSA-6q48-6c7w-9gw2). Both were under 7 days old on 2026-10-22,
+# so the lock takes them as a security exception; until 2026-10-28 regenerate with
+#   --exclude-newer-package uv=2026-10-21T00:00:00Z --exclude-newer-package certifi=2026-10-21T00:00:00Z
+# added to the command above.
+uv>=0.13.4
+certifi>=2026.10.19
