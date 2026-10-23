@@ -1,8 +1,8 @@
 name: Publish to Comfy Registry
 
 # Publishes this node when pyproject.toml changes on main, or by hand.
-# comfy-cli comes from .github/requirements/publish.txt: an exact release older
-# than 7 days, with every dependency pinned by hash. The registry key is a secret
+# comfy-cli comes from .github/requirements/publish.txt: a reviewed release
+# with every dependency pinned by hash. The registry key is a secret
 # of the comfy-registry environment, which runs only from main and waits for the
 # owner's approval; it reaches only the publish step.
 
