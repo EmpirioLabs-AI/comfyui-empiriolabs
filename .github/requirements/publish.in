@@ -8,4 +8,4 @@ comfy-cli==1.22.0
 # certifi 2026.10.19 (GHSA-6q48-6c7w-9gw2). Keep these minimum versions
 # when regenerating the hash lock; there is no release-age waiting period.
 uv>=0.13.4
-certifi>=2026.10.19
+certifi>=2026.10.23
