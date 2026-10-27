@@ -1,7 +1,7 @@
 # The CLI that publishes this node to the Comfy Registry (.github/workflows/publish.yml).
 # Pin an exact reviewed release, then regenerate publish.txt from the repository root:
 #   uv pip compile --generate-hashes --python-version 3.12 --python-platform linux .github/requirements/publish.in -o .github/requirements/publish.txt
-comfy-cli==1.22.0
+comfy-cli==1.23.0
 
 # Security floors for two of its dependencies. Both drop the emSign ECC Root CA - G3,
 # whose intermediate CA keys were compromised: uv 0.13.4 (GHSA-hq85-5cpj-mr62) and

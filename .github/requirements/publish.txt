@@ -125,7 +125,7 @@ certifi==2026.10.19 \
     --hash=sha256:035c1e85572b141bf1c3a3eff0e33a8eb74917522f2559075ff8d2fea780a1ae \
     --hash=sha256:42d35340cc5b9ba78e818ddbff0c5b1c2b779de448a340fd1b989f5fa8670e1b
     # via
-    #   -r .github/requirements/publish.in
+    #   -r publish.in
     #   comfy-cli
     #   httpcore
     #   httpx
@@ -310,10 +310,10 @@ click==8.5.0 \
     --hash=sha256:255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360 \
     --hash=sha256:ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34
     # via cookiecutter
-comfy-cli==1.22.0 \
-    --hash=sha256:39135e39dda9d4239c7837e863b713693d2afa6b45a5b97a6014642fa55b6640 \
-    --hash=sha256:c0ca9adf8dad94b0c2d5d500c78c3a0977283f6beb43bd68cda01623c0666219
-    # via -r .github/requirements/publish.in
+comfy-cli==1.23.0 \
+    --hash=sha256:3cd4bf80dd93b759e910fa825951c154781b8b95e526da59155ab96656483b31 \
+    --hash=sha256:7bfd3babd5c93e59e7762a17a522657610c8e89055eef8e09d04c6890daf2ab6
+    # via -r publish.in
 cookiecutter==2.7.1 \
     --hash=sha256:ca7bb7bc8c6ff441fbf53921b5537668000e38d56e28d763a1b73975c66c6138 \
     --hash=sha256:cee50defc1eaa7ad0071ee9b9893b746c1b3201b66bf4d3686d0f127c8ed6cf9
@@ -758,7 +758,7 @@ uv==0.13.4 \
     --hash=sha256:e90ab42825587821096cb0d071e387468da38cfa22818c91f9c0b3c0453048e8 \
     --hash=sha256:fb0e2028d9a8929884344afb7d91d0f65d9783f640d28aede89fca3602bedde9
     # via
-    #   -r .github/requirements/publish.in
+    #   -r publish.in
     #   comfy-cli
 wcwidth==0.9.2 \
     --hash=sha256:0a47e03d8293590ecce66c45dc20ff7b4b885e3c78093722239585eca0d77ab2 \
