@@ -7,5 +7,5 @@ comfy-cli==1.22.0
 # whose intermediate CA keys were compromised: uv 0.13.4 (GHSA-hq85-5cpj-mr62) and
 # certifi 2026.10.19 (GHSA-6q48-6c7w-9gw2). Keep these minimum versions
 # when regenerating the hash lock; there is no release-age waiting period.
-uv>=0.13.4
+uv>=0.13.5
 certifi>=2026.10.19
