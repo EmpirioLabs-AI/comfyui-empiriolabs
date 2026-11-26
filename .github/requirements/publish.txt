@@ -313,7 +313,7 @@ click==8.5.0 \
 comfy-cli==1.22.0 \
     --hash=sha256:39135e39dda9d4239c7837e863b713693d2afa6b45a5b97a6014642fa55b6640 \
     --hash=sha256:c0ca9adf8dad94b0c2d5d500c78c3a0977283f6beb43bd68cda01623c0666219
-    # via -r .github/requirements/publish.in
+    # via -r publish.in
 cookiecutter==2.7.1 \
     --hash=sha256:ca7bb7bc8c6ff441fbf53921b5537668000e38d56e28d763a1b73975c66c6138 \
     --hash=sha256:cee50defc1eaa7ad0071ee9b9893b746c1b3201b66bf4d3686d0f127c8ed6cf9
