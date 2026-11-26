@@ -121,11 +121,11 @@ blake3==1.0.11 \
     --hash=sha256:fdb80a774cb0a440fcb62c9f64a64662c740c5bca985f78e70a3aa787264cc41 \
     --hash=sha256:fe624bb87ee53d9770bec087631d7fd8f01eab0128693b8fe6b884d8c2cf0989
     # via comfy-cli
-certifi==2026.10.19 \
-    --hash=sha256:035c1e85572b141bf1c3a3eff0e33a8eb74917522f2559075ff8d2fea780a1ae \
-    --hash=sha256:42d35340cc5b9ba78e818ddbff0c5b1c2b779de448a340fd1b989f5fa8670e1b
+certifi==2026.11.20 \
+    --hash=sha256:7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f \
+    --hash=sha256:af1cb240a8133f105aa52684a3a3258339d7f2fd0bd4e2812698ff5cf5588c4e
     # via
-    #   -r .github/requirements/publish.in
+    #   -r publish.in
     #   comfy-cli
     #   httpcore
     #   httpx
@@ -313,7 +313,7 @@ click==8.5.0 \
 comfy-cli==1.22.0 \
     --hash=sha256:39135e39dda9d4239c7837e863b713693d2afa6b45a5b97a6014642fa55b6640 \
     --hash=sha256:c0ca9adf8dad94b0c2d5d500c78c3a0977283f6beb43bd68cda01623c0666219
-    # via -r .github/requirements/publish.in
+    # via -r publish.in
 cookiecutter==2.7.1 \
     --hash=sha256:ca7bb7bc8c6ff441fbf53921b5537668000e38d56e28d763a1b73975c66c6138 \
     --hash=sha256:cee50defc1eaa7ad0071ee9b9893b746c1b3201b66bf4d3686d0f127c8ed6cf9
@@ -726,7 +726,6 @@ typing-extensions==4.16.0 \
     --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8 \
     --hash=sha256:dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5
     # via
-    #   anyio
     #   comfy-cli
     #   posthog
 tzdata==2026.5 \
@@ -758,7 +757,7 @@ uv==0.13.4 \
     --hash=sha256:e90ab42825587821096cb0d071e387468da38cfa22818c91f9c0b3c0453048e8 \
     --hash=sha256:fb0e2028d9a8929884344afb7d91d0f65d9783f640d28aede89fca3602bedde9
     # via
-    #   -r .github/requirements/publish.in
+    #   -r publish.in
     #   comfy-cli
 wcwidth==0.9.2 \
     --hash=sha256:0a47e03d8293590ecce66c45dc20ff7b4b885e3c78093722239585eca0d77ab2 \
